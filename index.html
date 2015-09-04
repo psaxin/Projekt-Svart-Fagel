@@ -1,2 +1,140 @@
+﻿
 
-<html></html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+		<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Black Eagle Games</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+	</head>
+<body>
+<div class="page-wrap">
+  <div id="header">
+  <img src="bilder/logo.png" alt="logo" class="logo"/>
+		</div>
+<hr></hr>
+  <div id="container">
+	
+	
+		<div id="content">
+			<div id="nav">
+				<h3>Navigation</h3>
+				<div class="navram">
+				<ul>
+					<li id="link1"><a href="http://www.google.se">Hem</a></li>
+					<li><a href="http://www.google.se">Om Företaget</a></li>
+					<li><a href="http://www.google.se">Kontakt</a></li>
+					</ul>
+					<div>
+					<button id="suddaNews" type="button">Sudda News</button>
+					</div>
+					<div>
+					<button onclick="hideNews()" type="button">toggla Nyheter</button>
+					</div>
+				</div>
+				</div>
+				<div id="main">
+					<h2>Välkomsttext</h2>
+					<div class="navram">
+					<p>åäöBARA MASSA SKITBARA MASSA SKITBARA MASSA SKITBARA MASSA SKITBARA MASSA SKITBARA MASSA SKITBARA MASSA SKITBARA MASSA SKITBARA MASSA SKIT</p>
+					<p>                
+					BARA TEST SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT BARA MASSA SKIT </p>
+				<p>BILDSPEL</p>
+				<p>BILDSPEL</p>
+				<p>BILDSPEL</p>
+				
+				<div>
+                    <img src="bildspel/1.png" id="image" style="height:150px; width:150px" />
+				<!-- test uppgift
+				<img src="bilder/holmes_front_big.png" alt="fuck off" height="100" width="100"
+				onmouseover="this.src='bilder/swarm_front_big.png'"
+				onmouseout="this.src='bilder/holmes_front_big.png'"
+				/>
+                    -->
+				
+				</div>
+			
+				</div>
+				</div>
+			</div>
+		</div>
+		</div>
+      
+
+<div class="site-footer">
+Copyright &copy; Pierre Saxin &amp; Marcus Gerdin
+</div>
+
+
+<!-- test uppgift-->
+<script  type="text/javascript">
+function suddaNews() {
+$(function(){
+
+$("#link1").html("hejsan");
+});
+}
+</script>
+
+
+<script type="text/javascript">
+    function hideNews() {
+        
+$(function() {
+	
+    $("#main").toggle();
+
+});
+}
+</script>
+<script src="jquery.js"  type="text/javascript"></script>
+ 
+<script type="text/javascript">
+
+    $(function(){
+
+    $("#suddaNews").on("click", function() {
+        $("#main").toggle();
+    });
+    });
+</script>
+    <div id="bildspel">
+
+
+    </div>
+   
+    
+    <!----><input type="button" value="Start Slide Show" onclick="startImageSlideShow()" />-->
+   <!-- <input type="button" value="Stop Slide Show" onclick="stopImageSlideShow()" />-->
+    <script>
+        var intervalId;
+        //denna rad måste bort
+        intervalId = setInterval(changeImage, 4000);
+        //
+        function startImageSlideShow() {
+           intervalId = setInterval(changeImage, 4000);
+        }
+        function stopImageSlideShow() {
+            clearInterval(intervalId);
+        }
+        function changeImage() {
+            var imageSrc = document.getElementById("image").getAttribute("src");
+            var currentImageNumber = imageSrc.substring(imageSrc.lastIndexOf("/") + 1, imageSrc.lastIndexOf("/") + 2);
+            if (currentImageNumber == 7) {
+                currentImageNumber = 0;
+            }
+            //
+            //var newImage = "/bildspel/" + (Number(currentImageNumber) + 1) + ".png";
+            //document.getElementById("result").innerHTML = newImage;
+            //document.getElementById("image").setAttribute("src",newImage);
+            //
+            document.getElementById("image").setAttribute("src", "bildspel/" +
+                                 (Number(currentImageNumber) + 1) + ".png");
+        }
+
+       // changeImage();
+    </script>
+</body>
+</html>
